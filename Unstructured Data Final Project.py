@@ -125,7 +125,11 @@ acc_DT = accuracy_score(testing_c, y_pred_DT)
 print("Decision Tree Model Accuracy: {:.2f}%".format(acc_DT*100))
 acc_RF = accuracy_score(testing_c, y_pred_RF)
 print("Random Forest Model Accuracy: {:.2f}%".format(acc_RF*100))
-      
+
+#Confusion matrix to compare result
+from sklearn.metrics import confusion_matrix
+confusion_matrix(testing_c, y_pred_RF)
+
 #output of prediction
 col=['Original', 'Prediction']
 df_output_prediction=pd.DataFrame(columns=col)
