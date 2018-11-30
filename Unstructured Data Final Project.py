@@ -111,7 +111,7 @@ print("SVM model Accuracy:{:.2f}%".format(acc_SVM*100))
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 DTmodel = DecisionTreeClassifier()
-RFmodel = RandomForestClassifier(n_estimators=50, max_depth=3,
+RFmodel = RandomForestClassifier(n_estimators=100, max_depth=25,
 bootstrap=True, random_state=0) ## number of trees and number of layers/depth
 
 # training
