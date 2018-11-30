@@ -126,3 +126,13 @@ print("Decision Tree Model Accuracy: {:.2f}%".format(acc_DT*100))
 acc_RF = accuracy_score(testing_c, y_pred_RF)
 print("Random Forest Model Accuracy: {:.2f}%".format(acc_RF*100))
       
+#output of prediction
+col=['Original', 'Prediction']
+df_output_prediction=pd.DataFrame(columns=col)
+
+df_prediction=pd.Series(y_pred_RF).to_frame(name='Prediction')
+df_original=testing_c.to_frame(name='Original').reset_index()
+df_original=df_original.iloc[:,1:2]
+df_output_prediction=pd.concat([df_original, df_prediction], axis=1)
+
+df_output_prediction.to_csv('df_output_prediction.csv', index=False)
