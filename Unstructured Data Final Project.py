@@ -12,7 +12,7 @@ df_raw=pd.read_excel('Sheet for classification.xlsx')
 df_raw['Classification']=df_raw['Classification'].str.lower()
 df_raw['title_text_combined']=df_raw['Title'].map(str)+df_raw['Text'].map(str)
 
-
+#code each category into number
 df_raw['Classification_numeric']=0
 for i in range(len(df_raw['Classification'])):
     if df_raw['Classification'][i]=='bracelet':
