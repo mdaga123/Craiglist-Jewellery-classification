@@ -77,3 +77,22 @@ y_pred_SVM = SVMmodel.predict(testing_x)
 acc_SVM = accuracy_score(testing_c, y_pred_SVM)
 print("SVM model Accuracy:
 {:.2f}%".format(acc_SVM*100))
+
+#Decision Tree and Random Forest      
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+DTmodel = DecisionTreeClassifier()
+RFmodel = RandomForestClassifier(n_estimators=50, max_depth=3,
+bootstrap=True, random_state=0) ## number of trees and number of
+layers/depth
+# training
+DTmodel.fit(training_x, training_c)
+y_pred_DT = DTmodel.predict(testing_x)
+RFmodel.fit(training_x, training_c)
+y_pred_RF = RFmodel.predict(testing_x)
+# evaluation
+acc_DT = accuracy_score(testing_c, y_pred_DT)
+print("Decision Tree Model Accuracy: {:.2f}%".format(acc_DT*100))
+acc_RF = accuracy_score(testing_c, y_pred_RF)
+print("Random Forest Model Accuracy: {:.2f}%".format(acc_RF*100))
+      
