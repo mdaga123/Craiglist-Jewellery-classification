@@ -88,3 +88,24 @@ v2 = vectorizer2.transform(test_full_string_list)
 array_final=v2.toarray()
 
 testing_x=pd.DataFrame(array_final)
+
+## Naive Bayes
+from sklearn.naive_bayes import MultinomialNB
+NBmodel = MultinomialNB()
+# training
+NBmodel.fit(training_x, training_c)
+y_pred_NB = NBmodel.predict(testing_x)
+# evaluation
+acc_NB = accuracy_score(testing_c, y_pred_NB)
+print("Naive Bayes model Accuracy:: {:.2f}%".format(acc_NB*100))
+
+#SVC
+from sklearn.svm import LinearSVC
+SVMmodel = LinearSVC()
+# training
+SVMmodel.fit(training_x, training_c)
+y_pred_SVM = SVMmodel.predict(testing_x)
+# evaluation
+acc_SVM = accuracy_score(testing_c, y_pred_SVM)
+print("SVM model Accuracy:
+{:.2f}%".format(acc_SVM*100))
