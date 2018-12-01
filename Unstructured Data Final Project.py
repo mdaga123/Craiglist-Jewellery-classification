@@ -1,10 +1,11 @@
 ####Unstructured Data Final Project
 import pandas as pd
 import nltk
-from sklearn.feature_extraction.text import CountVectorizer
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import *
+
+import os
+os.chdir('D:\\Master Program\\03. Begin\\Course\\10. Analyzing Unstructured Data\\Group project')
 
 df_raw=pd.read_excel('Sheet for classification.xlsx')
 
@@ -64,13 +65,12 @@ df_for_model=pd.DataFrame(array_final)
 
 #training_x=pd.DataFrame(array_final)
 
-#Split into train and test set
-
+#Split into train and test set based on 70/30
 training_x=df_for_model[0:390]
 training_c=df_raw[0:390]['Classification_numeric']
 
-testing_x=df_for_model[391:]
-testing_c=df_raw[391:]['Classification_numeric']
+testing_x=df_for_model[390:]
+testing_c=df_raw[390:]['Classification_numeric']
 
 #########
 #Modeling
