@@ -63,8 +63,6 @@ array_final=v2.toarray()
 
 df_for_model=pd.DataFrame(array_final)
 
-#training_x=pd.DataFrame(array_final)
-
 #Split into train and test set based on 70/30
 training_x=df_for_model[0:390]
 training_c=df_raw[0:390]['Classification_numeric']
