@@ -3,6 +3,8 @@ import pandas as pd
 import nltk
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
+import warnings
+warnings.filterwarnings("ignore")
 
 import os
 os.chdir('D:\\Master Program\\03. Begin\\Course\\10. Analyzing Unstructured Data\\Group project')
@@ -90,7 +92,7 @@ acc_NB = accuracy_score(testing_c, y_pred_NB)
 print("Naive Bayes model Accuracy:: {:.2f}%".format(acc_NB*100))
 
 ##############
-#SVC
+#SVM
 ##############
 from sklearn.svm import LinearSVC
 SVMmodel = LinearSVC()
